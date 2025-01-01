@@ -62,6 +62,9 @@ Esta API proporciona funcionalidades para la gestión de usuarios, roles y auten
 
 ### Autenticación
 
+- **Documentación de la api**
+  - Se encuentra en la ruta `/docs`
+
 - **Registro**
   - `POST /api/register`
   - Registra un nuevo usuario.

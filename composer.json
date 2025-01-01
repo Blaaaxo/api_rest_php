@@ -1,0 +1,23 @@
+{
+    "name": "brayan/prueba_tecnica",
+    "description": "Api con autenticacion y roles para prueba tecninca",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Brayan\\PruebaTecnica\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Brayan Fernandez",
+            "email": "brayanfe2009@gmail.com"
+        }
+    ],
+    "require": {
+        "firebase/php-jwt": "^6.10",
+        "vlucas/phpdotenv": "^5.6",
+        "bramus/router": "^1.6",
+        "setasign/fpdf": "^1.8"
+    }
+}

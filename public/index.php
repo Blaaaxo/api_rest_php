@@ -11,7 +11,7 @@ $dotenv->load();
 $router = new Router();
 
 // Ruta de documentación
-$router->get('/api-docs', function () {
+$router->get('/', function () {
     require_once __DIR__ . '/../public/docs/index.html';
 });
 

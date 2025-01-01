@@ -11,7 +11,7 @@ Esta API proporciona funcionalidades para la gestión de usuarios, roles y auten
 - PHP >= 8.1
 - Composer
 - Servidor Apache o Nginx
-- Base de datos MySQL o MariaDB
+- Base de datos MySQL
 - Opcional: Postman para pruebas
 
 ### Pasos para la instalación
@@ -43,11 +43,11 @@ Esta API proporciona funcionalidades para la gestión de usuarios, roles y auten
      ```
 
 4. **Configurar la base de datos**
-   - Importa el esquema desde el archivo SQL que esta en el proyecto, se llama "prueba_tecnica.sql":
+   - Importa el esquema desde el archivo SQL que se encuentra en el proyecto, se llama "prueba_tecnica.sql":
 
 5. **Configurar el servidor web**
    - Asegúrate de que la raíz del servidor web apunte al directorio `public/` del proyecto.
-   - Si usas Apache, agrega un archivo `.htaccess` en el directorio `public/` (ya incluido en el proyecto).
+   - Si usas xampp asegurate de copiar la carpeta dentro de "htdocs" luego, entra por medio de la url a el directorio public por ejemplo `http://localhost/prueba_tecnica/public/`.
 
 6. **Iniciar el servidor local**
    - Si estás usando PHP directamente:
@@ -126,15 +126,15 @@ El proyecto fue diseñado de esta manera para garantizar una arquitectura modula
    - **FPDF**: Permite generar reportes en PDF, lo cual es útil para exportar datos en un formato presentable.
 
 3. **Base de datos**:
-   - Se utilizó MySQL/MariaDB debido a su fiabilidad y amplia adopción en aplicaciones empresariales.
+   - Se utilizó MySQL.
    - La mejor práctica era separar los roles en una tabla aparte (`roles`) para normalizar los datos y garantizar la escalabilidad. En la tabla `users`, se utilizaría un campo `role_id` como clave foránea apuntando al rol correspondiente.
-   - Para esta práctica en específico, se utilizó un campo `enum` para los roles en lugar de una relación normalizada, simplificando la implementación sin perder funcionalidad básica.
+   - Sin embargo, para esta práctica en específico, se utilizó un campo `enum` para los roles en lugar de una relación normalizada, simplificando la implementación sin perder funcionalidad básica.
 
 
 4. **Seguridad**:
-   - **Encriptación de contraseñas**: Todas las contraseñas se almacenan utilizando `password_hash()` para protegerlas frente a ataques.
+   - **Encriptación de contraseñas**: Todas las contraseñas se almacenan utilizando `password_hash()` con su metodo para bcrypt para protegerlas frente a ataques.
    - **Protección contra inyección SQL**: Todas las consultas a la base de datos utilizan sentencias preparadas.
-   - **Autenticación con JWT**: Los endpoints protegidos aseguran que solo usuarios autorizados puedan acceder a los recursos.
+   - **Autenticación con JWT**: Los endpoints protegidos a traves de un middleware aseguran que solo usuarios autorizados puedan acceder a los recursos.
 
 5. **Manejo de errores**:
    - Las respuestas están estructuradas y utilizan códigos de estado HTTP adecuados (`200`, `400`, `404`, `500`) para proporcionar retroalimentación clara al cliente.

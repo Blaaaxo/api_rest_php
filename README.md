@@ -117,7 +117,7 @@ Esta API proporciona funcionalidades para la gestión de usuarios, roles y auten
 
 ### Por qué se hizo el proyecto de esta forma
 
-El proyecto fue diseñado de esta manera para garantizar una arquitectura modular, escalable y fácil de mantener. Cada decisión técnica se tomó considerando las mejores prácticas de desarrollo y las necesidades típicas de una API de gestión de usuarios:
+El proyecto fue diseñado de esta manera para garantizar una arquitectura modular, escalable y fácil de mantener. Cada decisión técnica se tomó considerando las mejores prácticas de desarrollo y las necesidades típicas de una API:
 
 1. **Estructura del proyecto**:
    - **Patrón MVC**: Este patrón separa claramente la lógica de negocios, la lógica de la aplicación y las rutas, facilitando la comprensión y la ampliación del proyecto.
